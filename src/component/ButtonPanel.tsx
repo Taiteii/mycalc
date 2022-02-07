@@ -1,6 +1,13 @@
 export default function ButtonPanel(props: {
   buttonHandler: (code: string) => void;
 }) {
+  // mapを使ってより管理しやすく書く場合
+
+  // const items = ["AC", "÷"];
+  // const a = items.map((item) => {
+  //   return <Button buttonHandler={props.buttonHandler} label={item} />;
+  // });
+
   return (
     <div>
       <button onClick={() => props.buttonHandler("AC")}>AC</button>
@@ -32,3 +39,13 @@ export default function ButtonPanel(props: {
     </div>
   );
 }
+
+// const Button = ({
+//   label,
+//   buttonHandler,
+// }: {
+//   label: string;
+//   buttonHandler: (code: string) => void;
+// }) => {
+//   return <button onClick={() => buttonHandler(label)}>{label}</button>;
+// };
